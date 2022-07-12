@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.userEventHandler=this.triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e.triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick")}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>[Minecraft] Advance Notice Summer 22: Current owners of Minecraft (PC) will receive either: Java Edition or Bedrock Version for free &#8211; Minecraft 101</title>
+<meta name='robots' content='max-image-preview:large' />
+
+<link rel="alternate" type="application/rss+xml" title="Minecraft 101 &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Minecraft 101 &raquo; Comments Feed" href="../comments/feed/index.html" />
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min41a3.css?ver=5.8' media='all' />
+<style id='wp-block-library-theme-inline-css'>
+#start-resizable-editor-section{display:none}.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}#end-resizable-editor-section{display:none}
+</style>
+<link data-minify="1" rel='stylesheet' id='wp_automatic_gallery_style-css'  href='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/css/wp-automaticb242.css?ver=1653665309' media='all' />
+<link data-minify="1" rel='stylesheet' id='newswrap-google-fonts-css'  href='../wp-content/cache/min/1/wp-content/fonts/ef62414add04c65c5e6fab1d4597bc71112d.css?ver=1654008129' media='all' />
+<link data-minify="1" rel='stylesheet' id='magnific-popup-css'  href='../wp-content/cache/min/1/wp-content/themes/newswrap/assets/lib/magnific-popup/magnific-popup112d.css?ver=1654008129' media='all' />
+<link rel='stylesheet' id='slick-css'  href='../wp-content/themes/newswrap/assets/lib/slick/css/slick.min41a3.css?ver=5.8' media='all' />
+<link data-minify="1" rel='stylesheet' id='newswrap-style-css'  href='../wp-content/cache/min/1/wp-content/themes/newswrap/style112d.css?ver=1654008129' media='all' />
+<script type="rocketlazyloadscript" src='../wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" src='../wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/js/main-frontb242.js?ver=1653665309' id='wp_automatic_gallery-js' defer></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="alternate" type="application/json" href="../wp-json/wp/v2/posts/379.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='../index60bd.html?p=379' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedb90a.json?url=https%3A%2F%2Fminecraft101.site%2Fminecraft-advance-notice-summer-22-current-owners-of-minecraft-pc-will-receive-either-java-edition-or-bedrock-version-for-free%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embeda971?url=https%3A%2F%2Fminecraft101.site%2Fminecraft-advance-notice-summer-22-current-owners-of-minecraft-pc-will-receive-either-java-edition-or-bedrock-version-for-free%2F&amp;format=xml" />
+
+		<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
+	
+	<link rel="icon" href="../wp-content/uploads/2022/05/cropped-logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2022/05/cropped-logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2022/05/cropped-logo-180x180.png" />
+<meta name="msapplication-TileImage" content="https://minecraft101.site/wp-content/uploads/2022/05/cropped-logo-270x270.png" />
+<style type='text/css' media='all'>
+    
+    .site-logo .custom-logo-link{
+    max-width:  200px;
+    }
+
+    </style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-228577383-8"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-228577383-8');
+</script>
+<script type="rocketlazyloadscript" async src="../../pagead2.googlesyndication.com/pagead/js/f4047.txt?client=ca-pub-1731162805004860" crossorigin="anonymous"></script>
+</head>
+
+<body class="post-template-default single single-post postid-379 single-format-standard wp-embed-responsive right-sidebar twp-single-grid">
+
+
+
+<div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="https://orgwordpress.org/">orgwordpress.org</a>
+    <!-- header add section -->
+    
+    
+<header id="site-header" class="theme-header header-overlay-enabled" role="banner">
+    
+            <div id="theme-toparea" class="theme-topbar">
+                
+                
+            <div class="wrapper header-wrapper">
+
+
+                <!-- trending news -->
+                <div class="header-news-ticker hidden-sm-element">
+                    <div class="wrapper header-wrapper">
+                        <div class="header-item header-item-left">
+                            
+            <div class="theme-ticker-area">
+                                    <div class="theme-ticker-components theme-ticker-left">
+                        <div class="theme-ticker-title">
+                            Breaking News                        </div>
+                    </div>
+                
+                
+                    <div class="theme-ticker-component theme-ticker-right">
+                        <div class="ticker-slides" data-direction="left" data-direction='left'>
+                           <div class="marquee">
+                                                                   <a class="ticker-slides-item" href="../block-of-the-week-mushroom-light-minecraft-gamekit/index.html" tabindex="0" rel="bookmark" title="BLOCK OF THE WEEK: MUSHROOM LIGHT &#8211; Minecraft &#8211; Gamekit">
+                                                                                            <span class="data-bg ticker-data-bg" data-background="https://minecraft101.site/wp-content/uploads/2022/06/589781_-150x150.png"></span>
+                                                                                        <span class="ticker-title">BLOCK OF THE WEEK: MUSHROOM LIGHT &#8211; Minecraft &#8211; Gamekit</span>
+                                        </a>
+                                                                        <a class="ticker-slides-item" href="../how-to-summon-killer-bunny-in-minecraft/index.html" tabindex="0" rel="bookmark" title="How to summon Killer Bunny in Minecraft">
+                                                                                            <span class="data-bg ticker-data-bg" data-background="https://minecraft101.site/wp-content/uploads/2022/06/1629383779_Wie-man-Killer-Bunny-in-Minecraft-beschwoert-150x150.jpg"></span>
+                                                                                        <span class="ticker-title">How to summon Killer Bunny in Minecraft</span>
+                                        </a>
+                                                                        <a class="ticker-slides-item" href="../10-creepy-minecraft-myths-that-might-be-true-selfesteem/index.html" tabindex="0" rel="bookmark" title="10 Creepy Minecraft Myths That Might Be True">
+                                                                                            <span class="data-bg ticker-data-bg" data-background="https://minecraft101.site/wp-content/uploads/2022/06/Minecraft-Mythen-150x150.jpg"></span>
+                                                                                        <span class="ticker-title">10 Creepy Minecraft Myths That Might Be True</span>
+                                        </a>
+                                                                        <a class="ticker-slides-item" href="../luminous-night-revealed-for-minecraft-dungeons-xboxera/index.html" tabindex="0" rel="bookmark" title="Luminous Night Revealed for Minecraft Dungeons &#8211; XboxEra">
+                                                                                            <span class="data-bg ticker-data-bg" data-background="https://minecraft101.site/wp-content/uploads/2022/06/FPguF19WUA8HOfQ-150x150.jpg"></span>
+                                                                                        <span class="ticker-title">Luminous Night Revealed for Minecraft Dungeons &#8211; XboxEra</span>
+                                        </a>
+                                                                        <a class="ticker-slides-item" href="../lego-minecraft-21145-the-skull-arena-review/index.html" tabindex="0" rel="bookmark" title="LEGO Minecraft 21145 The Skull Arena Review">
+                                                                                            <span class="data-bg ticker-data-bg" data-background="https://minecraft101.site/wp-content/uploads/2022/06/lego-minecraft-skull-island-21145-review-0000-150x150.jpg"></span>
+                                                                                        <span class="ticker-title">LEGO Minecraft 21145 The Skull Arena Review</span>
+                                        </a>
+                                                           </div>
+                        </div>
+                    </div>
+
+                                </div>
+
+                                </div>
+                    </div>
+                </div>
+                <!-- trending news end -->
+
+                <div class="header-item header-item-right">
+                    
+
+                    
+                </div>
+            </div>
+
+        
+            </div>
+
+            <div class="header-mainbar  data-bg header-bg-1  "  data-background="https://minecraft101.site/wp-content/themes/newswrap/assets/images/main-header.jpg" >
+        <div class="wrapper header-wrapper">
+            <div class="header-item header-item-left">
+                <div class="header-titles">
+                    <div class="site-title"><a href="../index.html" class="custom-logo-name">Minecraft 101</a></div>                    <!-- date/time -->
+                    <div class="header-item header-item-left">
+                                                    <div class="theme-topbar-item theme-topbar-date">
+                                <span class="theme-topbar-icon"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M18.5 2h-2.5v-0.5c0-0.276-0.224-0.5-0.5-0.5s-0.5 0.224-0.5 0.5v0.5h-10v-0.5c0-0.276-0.224-0.5-0.5-0.5s-0.5 0.224-0.5 0.5v0.5h-2.5c-0.827 0-1.5 0.673-1.5 1.5v14c0 0.827 0.673 1.5 1.5 1.5h17c0.827 0 1.5-0.673 1.5-1.5v-14c0-0.827-0.673-1.5-1.5-1.5zM1.5 3h2.5v1.5c0 0.276 0.224 0.5 0.5 0.5s0.5-0.224 0.5-0.5v-1.5h10v1.5c0 0.276 0.224 0.5 0.5 0.5s0.5-0.224 0.5-0.5v-1.5h2.5c0.276 0 0.5 0.224 0.5 0.5v2.5h-18v-2.5c0-0.276 0.224-0.5 0.5-0.5zM18.5 18h-17c-0.276 0-0.5-0.224-0.5-0.5v-10.5h18v10.5c0 0.276-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M7.5 10h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M10.5 10h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M13.5 10h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M16.5 10h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M4.5 12h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M7.5 12h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M10.5 12h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M13.5 12h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M16.5 12h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M4.5 14h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M7.5 14h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M10.5 14h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M13.5 14h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M16.5 14h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M4.5 16h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M7.5 16h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M10.5 16h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M13.5 16h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path fill="currentColor" d="M16.5 16h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path></svg></span>
+                                <span class="theme-topbar-label">Tuesday, July 12th, 2022</span>
+                            </div>
+                        
+                        <div class="theme-topbar-item theme-topbar-clock">
+                            <span class="theme-topbar-icon"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M16.32 17.113c1.729-1.782 2.68-4.124 2.68-6.613 0-2.37-0.862-4.608-2.438-6.355l0.688-0.688 0.647 0.646c0.098 0.098 0.226 0.146 0.353 0.146s0.256-0.049 0.353-0.146c0.195-0.195 0.195-0.512 0-0.707l-2-2c-0.195-0.195-0.512-0.195-0.707 0s-0.195 0.512 0 0.707l0.647 0.646-0.688 0.688c-1.747-1.576-3.985-2.438-6.355-2.438s-4.608 0.862-6.355 2.438l-0.688-0.688 0.646-0.646c0.195-0.195 0.195-0.512 0-0.707s-0.512-0.195-0.707 0l-2 2c-0.195 0.195-0.195 0.512 0 0.707 0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146l0.646-0.646 0.688 0.688c-1.576 1.747-2.438 3.985-2.438 6.355 0 2.489 0.951 4.831 2.68 6.613l-2.034 2.034c-0.195 0.195-0.195 0.512 0 0.707 0.098 0.098 0.226 0.147 0.354 0.147s0.256-0.049 0.354-0.147l2.060-2.059c1.705 1.428 3.836 2.206 6.087 2.206s4.382-0.778 6.087-2.206l2.059 2.059c0.098 0.098 0.226 0.147 0.354 0.147s0.256-0.049 0.353-0.147c0.195-0.195 0.195-0.512 0-0.707l-2.034-2.034zM1 10.5c0-4.687 3.813-8.5 8.5-8.5s8.5 3.813 8.5 8.5c0 4.687-3.813 8.5-8.5 8.5s-8.5-3.813-8.5-8.5z"></path><path fill="currentColor" d="M15.129 7.25c-0.138-0.239-0.444-0.321-0.683-0.183l-4.92 2.841-3.835-2.685c-0.226-0.158-0.538-0.103-0.696 0.123s-0.103 0.538 0.123 0.696l4.096 2.868c0.001 0.001 0.002 0.001 0.002 0.002 0.009 0.006 0.018 0.012 0.027 0.017 0.002 0.001 0.004 0.003 0.006 0.004 0.009 0.005 0.018 0.010 0.027 0.015 0.002 0.001 0.004 0.002 0.006 0.003 0.010 0.005 0.020 0.009 0.031 0.014 0.006 0.003 0.013 0.005 0.019 0.007 0.004 0.001 0.008 0.003 0.013 0.005 0.007 0.002 0.014 0.004 0.021 0.006 0.004 0.001 0.008 0.002 0.012 0.003 0.007 0.002 0.014 0.003 0.022 0.005 0.004 0.001 0.008 0.002 0.012 0.002 0.007 0.001 0.014 0.002 0.021 0.003 0.005 0.001 0.010 0.001 0.015 0.002 0.006 0.001 0.012 0.001 0.018 0.002 0.009 0.001 0.018 0.001 0.027 0.001 0.002 0 0.004 0 0.006 0 0 0 0-0 0-0s0 0 0.001 0c0.019 0 0.037-0.001 0.056-0.003 0.001-0 0.002-0 0.003-0 0.018-0.002 0.036-0.005 0.054-0.010 0.002-0 0.003-0.001 0.005-0.001 0.017-0.004 0.034-0.009 0.050-0.015 0.003-0.001 0.006-0.002 0.008-0.003 0.016-0.006 0.031-0.012 0.046-0.020 0.004-0.002 0.007-0.004 0.011-0.006 0.005-0.003 0.011-0.005 0.016-0.008l5.196-3c0.239-0.138 0.321-0.444 0.183-0.683z"></path></svg></span>
+                            <span class="theme-topbar-label">
+                                <div id="twp-time-clock"></div>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- end date/time -->
+                </div>
+            </div>
+                            <div class='header-item header-item-right'>
+                    <div id="block-5" class="widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+</div><div id="block-6" class="widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+</div>                </div>
+                    </div>
+    </div>
+    <div id="twp-header-navbar" class="header-navbar">
+        <div class="wrapper header-wrapper">
+            <div class="header-item header-item-left">
+
+                <div class="header-navigation-wrapper">
+                    <div class="site-navigation">
+                        <nav class="primary-menu-wrapper" aria-label="Horizontal" role="navigation">
+                            <ul class="primary-menu theme-menu">
+                                                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="header-item header-item-right">
+                        <div class="navbar-controls hide-no-js">
+
+            <button type="button" class="navbar-control navbar-control-search">
+                <span class="navbar-control-trigger" tabindex="-1"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20"><path fill="currentColor" d="M1148.0319,95.6176858 L1151.70711,99.2928932 C1152.09763,99.6834175 1152.09763,100.316582 1151.70711,100.707107 C1151.31658,101.097631 1150.68342,101.097631 1150.29289,100.707107 L1146.61769,97.0318993 C1145.07801,98.2635271 1143.12501,99 1141,99 C1136.02944,99 1132,94.9705627 1132,90 C1132,85.0294372 1136.02944,81 1141,81 C1145.97056,81 1150,85.0294372 1150,90 C1150,92.1250137 1149.26353,94.078015 1148.0319,95.6176858 Z M1146.04139,94.8563911 C1147.25418,93.5976949 1148,91.8859456 1148,90 C1148,86.1340067 1144.86599,83 1141,83 C1137.13401,83 1134,86.1340067 1134,90 C1134,93.8659933 1137.13401,97 1141,97 C1142.88595,97 1144.59769,96.2541764 1145.85639,95.0413859 C1145.88271,95.0071586 1145.91154,94.9742441 1145.94289,94.9428932 C1145.97424,94.9115423 1146.00716,94.8827083 1146.04139,94.8563911 Z" transform="translate(-1132 -81)" /></svg></span>
+            </button>
+
+            <button type="button" class="navbar-control navbar-control-offcanvas">
+                <span class="navbar-control-trigger" tabindex="-1"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z" /></svg></span>
+            </button>
+
+        </div>
+                    <button type="button" class="navbar-control navbar-control-trending-news">
+                <span class="navbar-control-trigger" tabindex="-1">
+                    <span class="navbar-controller">
+                        <span class="navbar-control-icon">
+                            <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M8.625 0c.61 7.189-5.625 9.664-5.625 15.996 0 4.301 3.069 7.972 9 8.004 5.931.032 9-4.414 9-8.956 0-4.141-2.062-8.046-5.952-10.474.924 2.607-.306 4.988-1.501 5.808.07-3.337-1.125-8.289-4.922-10.378zm4.711 13c3.755 3.989 1.449 9-1.567 9-1.835 0-2.779-1.265-2.769-2.577.019-2.433 2.737-2.435 4.336-6.423z" /></svg>                        </span>
+                        <span class="navbar-control-label">
+                            Trending News                        </span>
+                    </span>
+                </span>
+            </button>
+                        </div>
+        </div>
+        <div class="progress-bar"></div>
+        
+            <div class="trending-news-main-wrap">
+               <div class="wrapper">
+                    <div class="column-row">
+
+                        <a href="javascript:void(0)" class="newswrap-skip-link-start"></a>
+
+                        <div class="column column-12">
+                            <button type="button" id="trending-collapse">
+                                <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="currentColor" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>                            </button>
+                        </div>
+
+                                                    <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1469" class="news-article mb-20 post-1469 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/589781_-150x150.png">
+
+                                                                                                        <a class="img-link" href="../block-of-the-week-mushroom-light-minecraft-gamekit/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../block-of-the-week-mushroom-light-minecraft-gamekit/index.html" tabindex="0" rel="bookmark" title="BLOCK OF THE WEEK: MUSHROOM LIGHT &#8211; Minecraft &#8211; Gamekit">BLOCK OF THE WEEK: MUSHROOM LIGHT &#8211; Minecraft &#8211; Gamekit</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published" datetime="2022-06-22T10:33:00+00:00">June 22, 2022</time><time class="updated" datetime="2022-06-22T16:12:31+00:00">June 22, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1466" class="news-article mb-20 post-1466 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/1629383779_Wie-man-Killer-Bunny-in-Minecraft-beschwoert-150x150.jpg">
+
+                                                                                                        <a class="img-link" href="../how-to-summon-killer-bunny-in-minecraft/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../how-to-summon-killer-bunny-in-minecraft/index.html" tabindex="0" rel="bookmark" title="How to summon Killer Bunny in Minecraft">How to summon Killer Bunny in Minecraft</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published" datetime="2022-06-22T08:40:52+00:00">June 22, 2022</time><time class="updated" datetime="2022-06-22T16:12:43+00:00">June 22, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1462" class="news-article mb-20 post-1462 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/Minecraft-Mythen-150x150.jpg">
+
+                                                                                                        <a class="img-link" href="../10-creepy-minecraft-myths-that-might-be-true-selfesteem/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../10-creepy-minecraft-myths-that-might-be-true-selfesteem/index.html" tabindex="0" rel="bookmark" title="10 Creepy Minecraft Myths That Might Be True">10 Creepy Minecraft Myths That Might Be True</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published" datetime="2022-06-22T07:20:18+00:00">June 22, 2022</time><time class="updated" datetime="2022-06-22T16:12:55+00:00">June 22, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1459" class="news-article mb-20 post-1459 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/FPguF19WUA8HOfQ-150x150.jpg">
+
+                                                                                                        <a class="img-link" href="../luminous-night-revealed-for-minecraft-dungeons-xboxera/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../luminous-night-revealed-for-minecraft-dungeons-xboxera/index.html" tabindex="0" rel="bookmark" title="Luminous Night Revealed for Minecraft Dungeons &#8211; XboxEra">Luminous Night Revealed for Minecraft Dungeons &#8211; XboxEra</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-22T06:39:30+00:00">June 22, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1435" class="news-article mb-20 post-1435 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/lego-minecraft-skull-island-21145-review-0000-150x150.jpg">
+
+                                                                                                        <a class="img-link" href="../lego-minecraft-21145-the-skull-arena-review/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../lego-minecraft-21145-the-skull-arena-review/index.html" tabindex="0" rel="bookmark" title="LEGO Minecraft 21145 The Skull Arena Review">LEGO Minecraft 21145 The Skull Arena Review</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-22T01:04:51+00:00">June 22, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1432" class="news-article mb-20 post-1432 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/Plaster-Masks-God-the-World-Terraconia.png">
+
+                                                                                                        <a class="img-link" href="../plaster-masks-god-the-world-terraconia/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../plaster-masks-god-the-world-terraconia/index.html" tabindex="0" rel="bookmark" title="&#8220;Plaster Masks&#8221; &#8211; God &#038; the World &#8211; Terraconia">&#8220;Plaster Masks&#8221; &#8211; God &#038; the World &#8211; Terraconia</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-22T00:20:09+00:00">June 22, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1427" class="news-article mb-20 post-1427 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/Minecraft-versions-115-and-1151.jpg">
+
+                                                                                                        <a class="img-link" href="../minecraft-versions-1-15-and-1-15-1/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../minecraft-versions-1-15-and-1-15-1/index.html" tabindex="0" rel="bookmark" title="Minecraft versions 1.15 and 1.15.1">Minecraft versions 1.15 and 1.15.1</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/21/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-21T22:41:23+00:00">June 21, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1425" class="news-article mb-20 post-1425 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/A-Journey-to-the-End-of-the-Minecraft-World-%e2%80%ba.jpg">
+
+                                                                                                        <a class="img-link" href="../a-journey-to-the-end-of-the-minecraft-world-minecraft-games/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../a-journey-to-the-end-of-the-minecraft-world-minecraft-games/index.html" tabindex="0" rel="bookmark" title="A Journey to the End of the Minecraft World › Minecraft Games">A Journey to the End of the Minecraft World › Minecraft Games</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/21/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-21T21:20:20+00:00">June 21, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                                                        <div class="column column-4 column-sm-6">
+
+                                <article id="theme-post-1409" class="news-article mb-20 post-1409 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                    <div class="column-row column-row-small">
+
+                                        
+                                            <div class="column column-4">
+
+                                                <div class="data-bg data-bg-thumbnail" data-background="../wp-content/uploads/2022/06/1533806770252-150x150.jpg">
+
+                                                                                                        <a class="img-link" href="../the-best-minecraft-mods-and-how-to-install-them/index.html" tabindex="0"></a>
+                                        
+                                                </div>
+
+
+                                            </div>
+
+                                        
+                                        <div class="column column-8">
+                                            <div class="article-content">
+
+                                                <h3 class="entry-title entry-title-small">
+                                                    <a href="../the-best-minecraft-mods-and-how-to-install-them/index.html" tabindex="0" rel="bookmark" title="The best Minecraft mods and how to install them">The best Minecraft mods and how to install them</a>
+                                                </h3>
+
+                                                <div class="entry-meta">
+                                                    <div class="entry-meta-item entry-meta-date"><span class="entry-meta-icon calendar-icon"> <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg></span><span class="posted-on"><a href="../2022/06/21/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-21T17:52:56+00:00">June 21, 2022</time></a></span></div>                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </article>
+                            </div>
+                            
+                        <a href="javascript:void(0)" class="newswrap-skip-link-end"></a>
+
+                    </div>
+               </div>
+            </div>
+
+                </div>
+
+</header>
+    
+    <div id="content" class="site-content">
+    <div class="singular-main-block">
+        <div class="wrapper">
+            <div class="column-row">
+
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main " role="main">
+
+                        <div class="entry-breadcrumb"><nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="3" /><meta name="itemListOrder" content="Ascending" /><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="../index.html" rel="home" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item"><a href="../category/uncategorized/index.html" itemprop="item"><span itemprop="name">Uncategorized</span></a><meta itemprop="position" content="2" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><a href="index.html" itemprop="item"><span itemprop="name">[Minecraft] Advance Notice Summer 22: Current owners of Minecraft (PC) will receive either: Java Edition or Bedrock Version for free</span></a><meta itemprop="position" content="3" /></li></ul></nav>
+        </div>
+                            <div class="article-wraper single-layout  single-layout-default">
+
+                                
+<article id="post-379" class="post-379 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"> 
+
+	
+		<div class="post-thumbnail">
+			                <img width="1024" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20512'%3E%3C/svg%3E" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="[Minecraft] Advance Notice Summer 22: Current owners of Minecraft (PC) will receive either: Java Edition or Bedrock Version for free" data-lazy-srcset="https://minecraft101.site/wp-content/uploads/2022/06/1965182_1.jpg 1024w, https://minecraft101.site/wp-content/uploads/2022/06/1965182_1-300x150.jpg 300w, https://minecraft101.site/wp-content/uploads/2022/06/1965182_1-768x384.jpg 768w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="../wp-content/uploads/2022/06/1965182_1.jpg" /><noscript><img width="1024" height="512" src="../wp-content/uploads/2022/06/1965182_1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="[Minecraft] Advance Notice Summer 22: Current owners of Minecraft (PC) will receive either: Java Edition or Bedrock Version for free" srcset="https://minecraft101.site/wp-content/uploads/2022/06/1965182_1.jpg 1024w, https://minecraft101.site/wp-content/uploads/2022/06/1965182_1-300x150.jpg 300w, https://minecraft101.site/wp-content/uploads/2022/06/1965182_1-768x384.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript>        		
+					
+				<header class="entry-header">
+		
+							
+						<div class="entry-meta entry-meta-top">
+		
+							<div class="entry-meta-item entry-meta-categories"><span class="cat-links">
+                            <a  href="../category/uncategorized/index.html" rel="category tag">
+                                <span>Uncategorized</span>
+                            </a>
+
+                        </span></div>		
+						</div>
+		
+							
+					<h1 class="entry-title entry-title-large">
+		
+						[Minecraft] Advance Notice Summer 22: Current owners of Minecraft (PC) will receive either: Java Edition or Bedrock Version for free		
+					</h1>
+					
+											<div class="entry-meta">
+		
+							<div class="entry-meta-inline"><div class="entry-meta-item entry-meta-byline"> <span class="author vcard"><a class="url fn n" href="../author/minecraft101/index.html">Minecraft101</a></span></div><div class="entry-meta-separator"></div><div class="entry-meta-item entry-meta-date"><span class="posted-on"><a href="../2022/06/06/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-06T06:47:33+00:00">June 6, 2022</time></a></span></div></div>		
+						</div>
+									</header>
+		
+						
+		</div>
+
+	
+	
+	<div class="post-content-wrap">
+
+		
+		<div class="post-content">
+
+			<div class="entry-content">
+
+				<p><br /><strong>Minecraft: 2 for 1 action </strong>⛏🧱<br />On the official website for the <strong>coming summer</strong> announced a special promotion where you can buy in/at the <strong>Owning/purchasing Minecraft</strong> additionally one <strong>Present code </strong>receives.  PC players of the Java Edition get the Windows version “Bedrock Edition” for free or vice versa.  Please note that this is a pre-announcement without an exact start date, it is only referred to the summer (in the northern hemisphere).  For your orientation, it starts on June 21st this year.  When the campaign has started, you will be informed accordingly here.<br />help.minecraft.net/hc/…es-</p>
+<p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-image="1965182-FG2h2" data-height="1024" data-width="485" data-alignment="left" alt="1965182_1.jpg" data-lazy-src="../wp-content/uploads/2022/06/1654498053_515_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg"/><noscript><img src="../wp-content/uploads/2022/06/1654498053_515_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg" data-image="1965182-FG2h2" data-height="1024" data-width="485" data-alignment="left" alt="1965182_1.jpg"/></noscript></p>
+<p><strong>Bundle &#8211; Options</strong></p>
+<p><strong>(1)</strong> Minecraft: Java Edition owners get: Minecraft: Bedrock Edition for Windows for free</p>
+<p><strong>(2)</strong> Minecraft: Java Edition owners get: Minecraft: Bedrock Edition for Windows for free</p>
+<p><strong>(3)</strong> When you buy a game &#8211; you get both versions as a bundle</p>
+<p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-image="1965182-0KweK" data-height="601" data-width="603" data-alignment="left" wide="" alt="1965182_1.jpg" data-lazy-src="../wp-content/uploads/2022/06/1654498053_453_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg"/><noscript><img src="../wp-content/uploads/2022/06/1654498053_453_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg" data-image="1965182-0KweK" data-height="601" data-width="603" data-alignment="left" wide="" alt="1965182_1.jpg"/></noscript></p>
+<p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-image="1965182-LIvyo" data-height="283" data-width="903" data-alignment="left" wide="" alt="1965182_1.jpg" data-lazy-src="../wp-content/uploads/2022/06/1654498053_477_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg"/><noscript><img src="../wp-content/uploads/2022/06/1654498053_477_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg" data-image="1965182-LIvyo" data-height="283" data-width="903" data-alignment="left" wide="" alt="1965182_1.jpg"/></noscript></p>
+<p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-image="1965182-lBAYQ" data-height="499" data-width="676" data-alignment="left" wide="" alt="1965182_1.jpg" data-lazy-src="../wp-content/uploads/2022/06/1654498053_129_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg"/><noscript><img src="../wp-content/uploads/2022/06/1654498053_129_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg" data-image="1965182-lBAYQ" data-height="499" data-width="676" data-alignment="left" wide="" alt="1965182_1.jpg"/></noscript></p>
+<p>On the one hand there is a version exclusively for Windows 10 (also called Bedrock Edition).  This is only available in the Microsoft Store for €29.99.  In addition, there is the well-known Java version (23.95€).</p>
+<p>Basically, both versions support texture packs.  However, the Java version has a clear advantage here.  It has been around much longer and is therefore better supported by developers.  However, the very popular shaders, which greatly enhance the game&#8217;s visuals, are only available in the Java version.<br />While there is a marketplace in the Windows 10 version where you can purchase paid skins, texture packs and worlds, this does not exist on Java.  Here 99% of all packs can be downloaded for free from the Internet.  Advantage Windows: with the Bedrock Edition you can play together on Windows 10, the Xbox One and the Nintendo Switch, since all of these platforms support crossplay.</p>
+<p><strong>a notice</strong>: Buyers of the Java edition before October 29, 2018 will already get the Bedrock version for Windows 10 for free!  Simply log in to the Minecraft website with your Mojang account and link your Microsoft account.</p>
+<p><img class="userHtml-videoDummy-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20480%20360'%3E%3C/svg%3E" loading="lazy" width="480" height="360" data-lazy-src="../wp-content/uploads/2022/06/1654498053_226_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg"/><noscript><img class="userHtml-videoDummy-img" src="../wp-content/uploads/2022/06/1654498053_226_Minecraft-Advance-Notice-Summer-22-Current-owners-of-Minecraft-PC.jpg" loading="lazy" width="480" height="360"/></noscript></p>
+
+			</div>
+
+			
+				<div class="entry-footer">
+
+                    <div class="entry-meta">
+                                             </div>
+
+                    <div class="entry-meta">
+                                            </div>
+
+				</div>
+
+			
+		</div>
+
+	</div>
+
+</article>
+                            </div>
+
+                        
+    			<div class="theme-block related-posts-area">
+
+    	        	                        <header class="block-title-wrapper">
+                            <h3 class="block-title">
+                                More Stories                            </h3>
+                        </header>
+    		        
+    	            <div class="related-posts-wrapper">
+
+                                                        <article id="theme-post-1469" class="news-article news-article-list post-1469 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                                                            <div class="data-bg data-bg-small" data-background="../wp-content/uploads/2022/06/589781_-300x158.png">
+
+                                            
+                                            <a href="../block-of-the-week-mushroom-light-minecraft-gamekit/index.html">
+                                            </a>
+                                        </div>
+                                    
+                                    <div class="article-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title entry-title-medium">
+                                                <a href="../block-of-the-week-mushroom-light-minecraft-gamekit/index.html" rel="bookmark">
+                                                    BLOCK OF THE WEEK: MUSHROOM LIGHT &#8211; Minecraft &#8211; Gamekit                                                </a>
+                                            </h3>
+                                        </header>
+
+                                        <div class="entry-content entry-content-muted">
+                                            <p>A fluorescent mushroom? Why do ghasts have such big eyes? We&#039;ll never know for sure, but I suspect it&#039;s because...</p>                                        </div>
+
+                                        <div class="entry-meta">
+                                            <div class="entry-meta-inline"><div class="entry-meta-item entry-meta-byline"> <span class="author vcard"><a class="url fn n" href="../author/minecraft101/index.html">Minecraft101</a></span></div><div class="entry-meta-separator"></div><div class="entry-meta-item entry-meta-date"><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published" datetime="2022-06-22T10:33:00+00:00">June 22, 2022</time><time class="updated" datetime="2022-06-22T16:12:31+00:00">June 22, 2022</time></a></span></div></div>                                        </div>
+                                    </div>
+                                </article>
+                                                        <article id="theme-post-1466" class="news-article news-article-list post-1466 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                                                            <div class="data-bg data-bg-small" data-background="../wp-content/uploads/2022/06/1629383779_Wie-man-Killer-Bunny-in-Minecraft-beschwoert-300x168.jpg">
+
+                                            
+                                            <a href="../how-to-summon-killer-bunny-in-minecraft/index.html">
+                                            </a>
+                                        </div>
+                                    
+                                    <div class="article-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title entry-title-medium">
+                                                <a href="../how-to-summon-killer-bunny-in-minecraft/index.html" rel="bookmark">
+                                                    How to summon Killer Bunny in Minecraft                                                </a>
+                                            </h3>
+                                        </header>
+
+                                        <div class="entry-content entry-content-muted">
+                                            <p>Bunnies are passive mobs in Minecraft. They drop loot and run away from players who get too close. That may...</p>                                        </div>
+
+                                        <div class="entry-meta">
+                                            <div class="entry-meta-inline"><div class="entry-meta-item entry-meta-byline"> <span class="author vcard"><a class="url fn n" href="../author/minecraft101/index.html">Minecraft101</a></span></div><div class="entry-meta-separator"></div><div class="entry-meta-item entry-meta-date"><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published" datetime="2022-06-22T08:40:52+00:00">June 22, 2022</time><time class="updated" datetime="2022-06-22T16:12:43+00:00">June 22, 2022</time></a></span></div></div>                                        </div>
+                                    </div>
+                                </article>
+                                                        <article id="theme-post-1462" class="news-article news-article-list post-1462 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                                                            <div class="data-bg data-bg-small" data-background="../wp-content/uploads/2022/06/Minecraft-Mythen-300x200.jpg">
+
+                                            
+                                            <a href="../10-creepy-minecraft-myths-that-might-be-true-selfesteem/index.html">
+                                            </a>
+                                        </div>
+                                    
+                                    <div class="article-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title entry-title-medium">
+                                                <a href="../10-creepy-minecraft-myths-that-might-be-true-selfesteem/index.html" rel="bookmark">
+                                                    10 Creepy Minecraft Myths That Might Be True                                                </a>
+                                            </h3>
+                                        </header>
+
+                                        <div class="entry-content entry-content-muted">
+                                            <p>The block game, which is a bit reminiscent of Lego, has been very popular for several years. Hardly any game...</p>                                        </div>
+
+                                        <div class="entry-meta">
+                                            <div class="entry-meta-inline"><div class="entry-meta-item entry-meta-byline"> <span class="author vcard"><a class="url fn n" href="../author/minecraft101/index.html">Minecraft101</a></span></div><div class="entry-meta-separator"></div><div class="entry-meta-item entry-meta-date"><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published" datetime="2022-06-22T07:20:18+00:00">June 22, 2022</time><time class="updated" datetime="2022-06-22T16:12:55+00:00">June 22, 2022</time></a></span></div></div>                                        </div>
+                                    </div>
+                                </article>
+                                                        <article id="theme-post-1459" class="news-article news-article-list post-1459 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                                                            <div class="data-bg data-bg-small" data-background="../wp-content/uploads/2022/06/FPguF19WUA8HOfQ-300x169.jpg">
+
+                                            
+                                            <a href="../luminous-night-revealed-for-minecraft-dungeons-xboxera/index.html">
+                                            </a>
+                                        </div>
+                                    
+                                    <div class="article-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title entry-title-medium">
+                                                <a href="../luminous-night-revealed-for-minecraft-dungeons-xboxera/index.html" rel="bookmark">
+                                                    Luminous Night Revealed for Minecraft Dungeons &#8211; XboxEra                                                </a>
+                                            </h3>
+                                        </header>
+
+                                        <div class="entry-content entry-content-muted">
+                                            <p>A new seasonal event is on the way for Minecraft Dungeonsarriving April 20, 2022. Explore the Tower at night with...</p>                                        </div>
+
+                                        <div class="entry-meta">
+                                            <div class="entry-meta-inline"><div class="entry-meta-item entry-meta-byline"> <span class="author vcard"><a class="url fn n" href="../author/minecraft101/index.html">Minecraft101</a></span></div><div class="entry-meta-separator"></div><div class="entry-meta-item entry-meta-date"><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-22T06:39:30+00:00">June 22, 2022</time></a></span></div></div>                                        </div>
+                                    </div>
+                                </article>
+                                                        <article id="theme-post-1435" class="news-article news-article-list post-1435 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                                                            <div class="data-bg data-bg-small" data-background="../wp-content/uploads/2022/06/lego-minecraft-skull-island-21145-review-0000-300x160.jpg">
+
+                                            
+                                            <a href="../lego-minecraft-21145-the-skull-arena-review/index.html">
+                                            </a>
+                                        </div>
+                                    
+                                    <div class="article-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title entry-title-medium">
+                                                <a href="../lego-minecraft-21145-the-skull-arena-review/index.html" rel="bookmark">
+                                                    LEGO Minecraft 21145 The Skull Arena Review                                                </a>
+                                            </h3>
+                                        </header>
+
+                                        <div class="entry-content entry-content-muted">
+                                            <p>Dodge the slime shooter and defeat your opponent to win the golden apple and go head-to-head with the killer rabbit...</p>                                        </div>
+
+                                        <div class="entry-meta">
+                                            <div class="entry-meta-inline"><div class="entry-meta-item entry-meta-byline"> <span class="author vcard"><a class="url fn n" href="../author/minecraft101/index.html">Minecraft101</a></span></div><div class="entry-meta-separator"></div><div class="entry-meta-item entry-meta-date"><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-22T01:04:51+00:00">June 22, 2022</time></a></span></div></div>                                        </div>
+                                    </div>
+                                </article>
+                                                        <article id="theme-post-1432" class="news-article news-article-list post-1432 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                                                            <div class="data-bg data-bg-small" data-background="../wp-content/uploads/2022/06/Plaster-Masks-God-the-World-Terraconia.png">
+
+                                            
+                                            <a href="../plaster-masks-god-the-world-terraconia/index.html">
+                                            </a>
+                                        </div>
+                                    
+                                    <div class="article-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title entry-title-medium">
+                                                <a href="../plaster-masks-god-the-world-terraconia/index.html" rel="bookmark">
+                                                    &#8220;Plaster Masks&#8221; &#8211; God &#038; the World &#8211; Terraconia                                                </a>
+                                            </h3>
+                                        </header>
+
+                                        <div class="entry-content entry-content-muted">
+                                            <p>hey,Since we are making plaster masks at school right now, I have a few questions if anyone here has any...</p>                                        </div>
+
+                                        <div class="entry-meta">
+                                            <div class="entry-meta-inline"><div class="entry-meta-item entry-meta-byline"> <span class="author vcard"><a class="url fn n" href="../author/minecraft101/index.html">Minecraft101</a></span></div><div class="entry-meta-separator"></div><div class="entry-meta-item entry-meta-date"><span class="posted-on"><a href="../2022/06/22/index.html" rel="bookmark"><time class="entry-date published updated" datetime="2022-06-22T00:20:09+00:00">June 22, 2022</time></a></span></div></div>                                        </div>
+                                    </div>
+                                </article>
+                        
+    	            </div>
+
+    			</div>
+
+    		
+                    <div class="navigation-wrapper">
+                        
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="../minecraft-for-windows-java-launcher-download/index.html" rel="prev"><span class="arrow" aria-hidden="true"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path></svg></span><span class="screen-reader-text">Previous post:</span><span class="post-title">Minecraft for Windows (Java Launcher) &#8211; Download</span></a></div><div class="nav-next"><a href="../minecraft-java-edition-download-cult-game-for-creative-people/index.html" rel="next"><span class="arrow" aria-hidden="true"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path></svg></span><span class="screen-reader-text">Next post:</span><span class="post-title">Minecraft Java Edition Download &#8211; Cult game for creative people</span></a></div></div>
+	</nav>                    </div>
+                    
+                    </main><!-- #main -->
+                </div>
+
+                
+<aside id="secondary" class="widget-area theme-bottom-sticky">
+	<div id="block-2" class="widget widget_block widget_search"><form role="search" method="get" action="https://minecraft101.site/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">Search</label><div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder=""  required /><button type="submit" class="wp-block-search__button ">Search</button></div></form></div><div id="block-3" class="widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Recent Posts</h2><ul class="wp-block-latest-posts__list wp-block-latest-posts"><li><a href="../block-of-the-week-mushroom-light-minecraft-gamekit/index.html">BLOCK OF THE WEEK: MUSHROOM LIGHT &#8211; Minecraft &#8211; Gamekit</a></li>
+<li><a href="../how-to-summon-killer-bunny-in-minecraft/index.html">How to summon Killer Bunny in Minecraft</a></li>
+<li><a href="../10-creepy-minecraft-myths-that-might-be-true-selfesteem/index.html">10 Creepy Minecraft Myths That Might Be True</a></li>
+<li><a href="../luminous-night-revealed-for-minecraft-dungeons-xboxera/index.html">Luminous Night Revealed for Minecraft Dungeons &#8211; XboxEra</a></li>
+<li><a href="../lego-minecraft-21145-the-skull-arena-review/index.html">LEGO Minecraft 21145 The Skull Arena Review</a></li>
+</ul></div></div></div><div id="block-4" class="widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+</div></aside><!-- #secondary -->
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+        <div class="header-searchbar">
+            <div class="header-searchbar-inner">
+                <div class="wrapper">
+                    <div class="header-searchbar-panel">
+
+                        <div class="header-searchbar-area">
+                            <a class="skip-link-search-top" href="javascript:void(0)"></a>
+                            <form role="search" method="get" class="search-form" action="https://minecraft101.site/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>                        </div>
+
+                        <button type="button" id="search-closer" class="close-popup">
+                            <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="currentColor" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+        <div id="offcanvas-menu">
+            <div class="offcanvas-wraper">
+
+                <div class="close-offcanvas-menu">
+
+                    <a class="skip-link-off-canvas" href="javascript:void(0)"></a>
+
+                    <div class="offcanvas-close">
+
+                        <button type="button" class="button-offcanvas-close">
+
+                            <span class="offcanvas-close-label">
+                                Close                            </span>
+
+                            <span class="bars">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </span>
+
+                        </button>
+
+                    </div>
+                </div>
+
+                <div id="primary-nav-offcanvas" class="offcanvas-item offcanvas-main-navigation">
+                    <nav class="primary-menu-wrapper">
+                        <ul class="primary-menu theme-menu">
+
+                            
+                        </ul>
+                    </nav>
+                </div>
+
+                                    <div class="responsive-content-menu">
+
+                    </div>
+                
+                <a class="skip-link-offcanvas screen-reader-text" href="javascript:void(0)"></a>
+                
+            </div>
+        </div>
+
+    
+<footer id="site-footer" role="contentinfo">
+            <div class="site-info">
+            <div class="wrapper">
+                <div class="column-row">
+                    <div class="column column-8 column-sm-12">
+                        <div class="footer-copyright">
+                           admin@minecraft101.site
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+            
+            <div class="hide-no-js">
+                <button type="button" class="scroll-up">
+                    <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"></path></svg>                </button>
+            </div>
+
+                    </div>
+
+    
+</footer>
+</div>
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/minecraft101.site","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("../index.html")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("../index.html")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" src='../wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4' id='imagesloaded-js' defer></script>
+<script type="rocketlazyloadscript" src='../wp-content/themes/newswrap/assets/lib/magnific-popup/jquery.magnific-popup.min41a3.js?ver=5.8' id='magnific-popup-js' defer></script>
+<script type="rocketlazyloadscript" src='../wp-content/themes/newswrap/assets/lib/slick/js/slick.min41a3.js?ver=5.8' id='slick-js' defer></script>
+<script type="rocketlazyloadscript" src='../wp-content/themes/newswrap/assets/lib/jquery-marquee/jquery.marquee.min41a3.js?ver=5.8' id='marquee-js' defer></script>
+<script id='newswrap-ajax-js-extra'>
+var newswrap_ajax = {"ajax_url":"https:\/\/minecraft101.site\/wp-admin\/admin-ajax.php","ajax_nonce":"e9b6c6d020"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='../wp-content/cache/min/1/wp-content/themes/newswrap/assets/lib/custom/js/ajax112d.js?ver=1654008129' id='newswrap-ajax-js' defer></script>
+<script id='newswrap-custom-js-extra'>
+var newswrap_custom = {"single_post":"1","newswrap_ed_post_reaction":"","next_svg":"<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><path fill=\"currentColor\" d=\"M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z\"><\/path><\/svg>","prev_svg":"<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><path fill=\"currentColor\" d=\"M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z\" \/><\/path><\/svg>","play":"<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 28\"><path fill=\"currentColor\" d=\"M21.625 14.484l-20.75 11.531c-0.484 0.266-0.875 0.031-0.875-0.516v-23c0-0.547 0.391-0.781 0.875-0.516l20.75 11.531c0.484 0.266 0.484 0.703 0 0.969z\" \/><\/svg>","pause":"<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 28\"><path fill=\"currentColor\" d=\"M24 3v22c0 0.547-0.453 1-1 1h-8c-0.547 0-1-0.453-1-1v-22c0-0.547 0.453-1 1-1h8c0.547 0 1 0.453 1 1zM10 3v22c0 0.547-0.453 1-1 1h-8c-0.547 0-1-0.453-1-1v-22c0-0.547 0.453-1 1-1h8c0.547 0 1 0.453 1 1z\" \/><\/svg>","mute":"<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 448.075 448.075\"><path fill=\"currentColor\" d=\"M352.021,16.075c0-6.08-3.52-11.84-8.96-14.4c-5.76-2.88-12.16-1.92-16.96,1.92l-141.76,112.96l167.68,167.68V16.075z\" \/><path fill=\"currentColor\" d=\"M443.349,420.747l-416-416c-6.24-6.24-16.384-6.24-22.624,0s-6.24,16.384,0,22.624l100.672,100.704h-9.376 c-9.92,0-18.56,4.48-24.32,11.52c-4.8,5.44-7.68,12.8-7.68,20.48v128c0,17.6,14.4,32,32,32h74.24l155.84,124.48 c2.88,2.24,6.4,3.52,9.92,3.52c2.24,0,4.8-0.64,7.04-1.6c5.44-2.56,8.96-8.32,8.96-14.4v-57.376l68.672,68.672 c3.136,3.136,7.232,4.704,11.328,4.704s8.192-1.568,11.328-4.672C449.589,437.131,449.589,427.019,443.349,420.747z\" \/><\/svg>","unmute":"<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 480 480\"><path fill=\"currentColor\" d=\"M278.944,17.577c-5.568-2.656-12.128-1.952-16.928,1.92L106.368,144.009H32c-17.632,0-32,14.368-32,32v128 c0,17.664,14.368,32,32,32h74.368l155.616,124.512c2.912,2.304,6.464,3.488,10.016,3.488c2.368,0,4.736-0.544,6.944-1.6 c5.536-2.656,9.056-8.256,9.056-14.4v-416C288,25.865,284.48,20.265,278.944,17.577z\" \/><path fill=\"currentColor\" d=\"M368.992,126.857c-6.304-6.208-16.416-6.112-22.624,0.128c-6.208,6.304-6.144,16.416,0.128,22.656 C370.688,173.513,384,205.609,384,240.009s-13.312,66.496-37.504,90.368c-6.272,6.176-6.336,16.32-0.128,22.624 c3.136,3.168,7.264,4.736,11.36,4.736c4.064,0,8.128-1.536,11.264-4.64C399.328,323.241,416,283.049,416,240.009 S399.328,156.777,368.992,126.857z\" \/><path fill=\"currentColor\" d=\"M414.144,81.769c-6.304-6.24-16.416-6.176-22.656,0.096c-6.208,6.272-6.144,16.416,0.096,22.624 C427.968,140.553,448,188.681,448,240.009s-20.032,99.424-56.416,135.488c-6.24,6.24-6.304,16.384-0.096,22.656 c3.168,3.136,7.264,4.704,11.36,4.704c4.064,0,8.16-1.536,11.296-4.64C456.64,356.137,480,299.945,480,240.009 S456.64,123.881,414.144,81.769z\" \/><\/svg>","play_text":"Play","pause_text":"Pause","mute_text":"Mute","unmute_text":"Unmute"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='../wp-content/cache/min/1/wp-content/themes/newswrap/assets/lib/custom/js/custom112d.js?ver=1654008129' id='newswrap-custom-js' defer></script>
+<script id='newswrap-pagination-js-extra'>
+var newswrap_pagination = {"paged":"1","maxpage":"0","nextLink":"","ajax_url":"https:\/\/minecraft101.site\/wp-admin\/admin-ajax.php","loadmore":"Load More Posts","nomore":"No More Posts","loading":"Loading...","pagination_layout":"numeric","ajax_nonce":"e9b6c6d020"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='../wp-content/cache/min/1/wp-content/themes/newswrap/assets/lib/custom/js/pagination112d.js?ver=1654008129' id='newswrap-pagination-js' defer></script>
+<script src='../wp-includes/js/wp-embed.min41a3.js?ver=5.8' id='wp-embed-js' defer></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="../wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
